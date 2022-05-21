@@ -22,7 +22,7 @@ function modifyGridSize () {
     console.log (gridSize)
 }
 
-function resetGrid () { //removes any created divs, thus resetting the grid clean//
+function resetGrid () { //removes any d the grid clean//
     grid.innerHTML = '';
 }
 
@@ -31,6 +31,6 @@ function gridCss () { //alters the css grid sizing//
     let size = gridSizeSlider.value;
 
     grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`
-    grid.style.gridTemplateR = `repeat(${size}, 1fr)`
+    grid.style.gridTemplateRows = `repeat(${size}, 1fr)`
 
 }
