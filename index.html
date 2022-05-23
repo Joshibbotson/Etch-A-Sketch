@@ -10,10 +10,13 @@
 <body>
     <main>
         <div class="settings-container">
-            <button>Colour mode</button>
-            <button>Rainbow mode</button>
-            <button>Eraser</button>
-            <button>Clear</button>
+            <div class="colour-wrapper">
+                <input type="color" name="colour-choice" id="colourChoice" class="colour-choice">
+            </div>
+            <button id="colourBtn" class="colour-btn">Colour mode</button>
+            <button id="rainbowBtn" class="rainbow-btn">Rainbow mode</button>
+            <button id="eraserBtn" class="eraser-btn">Eraser</button>
+            <button id="clearBtn" class="clear-btn">Clear</button>
             <label for="slide"></label>
             <input type="range" min="1" max="64" value =32 name="slide" class="slider" id="slider">
         </div>
