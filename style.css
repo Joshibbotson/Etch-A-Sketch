@@ -190,4 +190,12 @@ input[type=range] {
       flex-direction: column;
       transform: scale(0.5);
     }
+
+    .settings-container {
+      transform: scale(1.1);
+    }
+
+    button {
+      font-size: 1.2em;
+    }
   }
