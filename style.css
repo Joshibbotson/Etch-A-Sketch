@@ -9,6 +9,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
+    background-color: aliceblue;
 
 }
 
@@ -17,8 +18,6 @@ main {
     align-items: center;
     justify-content: center;
     gap: 5rem;
-
-
 }
 
 .settings-container {
@@ -38,6 +37,9 @@ main {
     display: grid;
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(16, 1fr);
+
+    box-shadow: #50555C 10px 10px 10px ;
+    background-color: white;
 }
 
 input[type="color"] {
@@ -53,19 +55,30 @@ input[type="color"] {
     height: 8rem;
     border-radius: 50%;
     overflow: hidden;
-}
 
+    box-shadow: #50555C 5px 5px 15px;
+}
 
 button {
     width: 10rem;
     height: 3rem;
-    background: none;
     border-radius: 4px;
+    background-color: white;
+    box-shadow: #50555C 10px 10px 10px ;
 
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: 600;
+
+    transition: all 200ms;
 }
+
 button:active {
     color: white;
-    background-color: black;
+    background-color: #50555C;
+}
+
+button:hover {
+  transform: scale(1.1);
 }
 
   /* copy and paste job beneath */

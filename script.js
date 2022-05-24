@@ -4,18 +4,27 @@ const div = document.getElementById('square');
 const slideLabel = document.getElementById('slideLabel')
 
 let colourValue = "black"
+let colourBtnToken;
+let rainbowBtnToken;
+let eraserBtnToken;
+let clearBtnToken;
 
 //html buttons//
 const clearBtn = document.getElementById('clearBtn').addEventListener('click', (e) => {
     resetGrid()
     modifyGridSize()
     colourValue = colourChoice.value
+
+    colourBtnToken = false;
+    rainbowBtnToken = false;
+    eraserBtnToken = false;
+    clearBtnToken = true;
+    btnColourChange()
 })
 const eraserBtn = document.getElementById('eraserBtn').addEventListener('click', (e) => {
     colourValue = "white"
 })
 const rainbowBtn = document.getElementById('rainbowBtn').addEventListener('click', (e) => {
-    
     let r = Math.floor(Math.random()*255)
     let g = Math.floor(Math.random()*255)
     let b = Math.floor(Math.random()*255)
@@ -43,13 +52,6 @@ function mousedownSwitch(e) {
     }
         return mousedown = false
 }
-
-// function mouseoffSwitch (e) { // not sure about this yet.
-//     if (e.type === 'mouseoff' && mousedown === true) {
-//         return mouseover = true;
-//     }
-//     return mouseover = false;
-// }
 
 for (i = 0; i < 16*16; i++) {
     const newDiv = document.createElement("div")
@@ -112,7 +114,6 @@ function divColourChange (e) {
     e.target.style.backgroundColor =`${colourValue}`;
 
 };
-
 
 
 //mental note, look into changing active state to change colours...
