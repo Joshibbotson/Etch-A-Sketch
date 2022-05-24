@@ -1,6 +1,7 @@
 const gridSizeSlider = document.getElementById('slider'); // value slider//
 const grid = document.getElementById('gridContainer');
 const div = document.getElementById('square');
+const slideLabel = document.getElementById('slideLabel')
 
 let colourValue = "black"
 
@@ -8,6 +9,7 @@ let colourValue = "black"
 const clearBtn = document.getElementById('clearBtn').addEventListener('click', (e) => {
     resetGrid()
     modifyGridSize()
+    colourValue = colourChoice.value
 })
 const eraserBtn = document.getElementById('eraserBtn').addEventListener('click', (e) => {
     colourValue = "white"
@@ -59,6 +61,8 @@ for (i = 0; i < 16*16; i++) {
 
     newDiv.addEventListener('mouseover', divColourChange)
     newDiv.addEventListener('mousedown', divColourChange)
+
+    slideLabel.innerHTML= `16 x 16`
     }
 
 gridSizeSlider.addEventListener('input', modifyGridSize ) // when input changes on value slider reset the grid//
@@ -70,6 +74,7 @@ function modifyGridSize () {
     gridCss();
 
     let gridSize = gridSizeSlider.value * gridSizeSlider.value;
+    let gridSizeLabel = gridSizeSlider.value;
         
     for (i = 0; i < gridSize; i++) {
         let newDiv = document.createElement("div")
@@ -81,6 +86,8 @@ function modifyGridSize () {
         newDiv.addEventListener('mouseoff', divColourChange)
         
         grid.insertAdjacentElement('afterbegin', newDiv)
+
+        slideLabel.innerHTML= `${gridSizeLabel} x ${gridSizeLabel}`
         }
     gridSize = 0;
 }
@@ -105,3 +112,7 @@ function divColourChange (e) {
     e.target.style.backgroundColor =`${colourValue}`;
 
 };
+
+
+
+//mental note, look into changing active state to change colours...
